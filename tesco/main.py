@@ -1,12 +1,23 @@
 import requests
+from typing import List
 
 class Tesco:
-    def __init__(self, key):
+    def __init__(self, key:str) -> None:
         print("Init tesco")
         self.key = key
     
-    def get_key(self):
-        return self.key
-    
-    def grocery_search(self, str:query):
+    def grocery_search(self, query:str, offset:int=0, limit:int=10) -> List:
+        params = {
+            "query": query,
+            "offset": offset,
+            "limit": limit           
+        }
+        headers = {
+            "Ocp-Apim-Subscription-Key": self.key
+        }
+        base = "https://dev.tescolabs.com/grocery/products/"
+        
+        r = requests.get(base, params=params, headers=headers)
+        
+        return r.json()
         
