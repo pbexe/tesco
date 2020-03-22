@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tesco"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["Miles Budden <miles@budden.net>"]
 readme = "README.md"
