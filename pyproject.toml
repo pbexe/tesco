@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "tesco"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.5"
+python = "^3.7"
 requests = "^2.23.0"
 
 [tool.poetry.dev-dependencies]
