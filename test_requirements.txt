@@ -1,6 +1,0 @@
-pytest
-pytest-timeout
-pytest-cov
-pylint
-mypy
-hypothesis
