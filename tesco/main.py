@@ -19,3 +19,20 @@ class Tesco:
         r = requests.get(base, params=params, headers=headers)
         
         return r.json()["uk"]["ghs"]["products"]["results"]
+    
+    def product_data(self, gtin:str="", tpnb:str="", tpnc:str="", catid:str="") -> List:
+        params:dict = {
+            "gtin": gtin,
+            "tpnb": tpnb,
+            "tpnc": tpnc,          
+            "catid": catid
+        }
+        cleaned_params:dict = {k: v for k, v in params.items() if v is not ""}
+        headers:dict = {
+            "Ocp-Apim-Subscription-Key": self.key
+        }
+        base:str = "https://dev.tescolabs.com/product/"
+        
+        r = requests.get(base, params=cleaned_params, headers=headers)
+        
+        return r.json()["products"]
