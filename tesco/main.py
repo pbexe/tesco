@@ -19,5 +19,5 @@ class Tesco:
         
         r = requests.get(base, params=params, headers=headers)
         
-        return r.json()
-        
+        for item in r.json()["uk"]["ghs"]["products"]["results"]:
+            yield item["name"]
