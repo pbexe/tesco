@@ -1,3 +1,5 @@
+[![Downloads](https://pepy.tech/badge/tesco)](https://pepy.tech/project/tesco)
+
 # Tesco
 
  A Python wrapper for the Tesco API
